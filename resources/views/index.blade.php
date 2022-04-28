@@ -12,17 +12,15 @@
     <body>
         <h1>Blog Name</h1>
         <p class ='create'>[<a href='/posts/create'>create</a>]</p>
-        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-            @csrf
-            @method('DELETE')
-            <button type="submit">delete</button> 
-        </form>
         <div class='posts'>
             @foreach ($posts as $post)
+                <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">delete</button> 
+                </form>
                 <div class='post'>
-                    
                     <h2 class='title'><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
-                    
                     <p class='body'>{{ $post->body }}</p>
                 </div>
             @endforeach

@@ -24,6 +24,5 @@
         <div class="footer">
             <a href="/posts">戻る</a>
         </div>
-        
     </body>
 </html>
