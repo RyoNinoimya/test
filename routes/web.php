@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/posts', 'PostController@index');
+Route::get('/posts/create', 'PostController@create');
+Route::get('/posts/{post}', 'PostController@show');
+Route::get('/posts', 'PostController@store');
+Route::get('/posts/{post}/edit', 'PostController@edit');
+Route::get('/posts/{post}', 'PostController@update');
+Route::delete('/posts/{post}', 'PostController@delete');
