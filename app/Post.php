@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //
+    protected $fillable = [
+    'title',
+    'body',
+    ];
+    public function getPaginateByLimit(int $limit_count = 5)
+    {
+        return $this->orderBy('id', 'DESC')->paginate($limit_count);
+    }
 }
